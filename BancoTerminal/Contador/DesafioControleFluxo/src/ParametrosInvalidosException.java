@@ -2,7 +2,7 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.concurrent.ExecutionException;
 
-public class ParametrosInvalidosException extends ExecutionException{
+public class ParametrosInvalidosException extends Exception{
 
     @Override
     public synchronized Throwable fillInStackTrace() {
