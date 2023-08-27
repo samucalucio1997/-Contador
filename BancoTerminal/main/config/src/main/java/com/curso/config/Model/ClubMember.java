@@ -12,7 +12,7 @@ import jakarta.persistence.OneToOne;
 public class ClubMember {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(name = "nome")
     private String name;
     @Column(name = "numero_Cadastro")
@@ -22,30 +22,40 @@ public class ClubMember {
     @Column(name = "Estatus_de_pagamento")
     private boolean paymentStatus;
 
+    public Long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getMembershipNumber() {
         return membershipNumber;
     }
+
     public void setMembershipNumber(String membershipNumber) {
         this.membershipNumber = membershipNumber;
     }
+
     public MembershipPackage getPackage() {
         return Package;
     }
+
     public void setPackage(MembershipPackage package1) {
         Package = package1;
     }
+
     public boolean isPaymentStatus() {
         return paymentStatus;
     }
+
     public void setPaymentStatus(boolean paymentStatus) {
         this.paymentStatus = paymentStatus;
     }
-
 
 }

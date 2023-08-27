@@ -1,5 +1,7 @@
 package com.curso.config.Model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,27 +12,32 @@ import jakarta.persistence.Id;
 public class MembershipPackage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
+
     @Column(name = "Tipo_de_pacote")
-    private String packageName;
-    @Column(name = "Valor_do_pacote")
-    private double packageValue;
+    private Pacote packageName;
+    @Column(name = "Valor_do_pacote", precision = 13, scale = 2)
+    private BigDecimal packageValue;
     @Column(name = "beneficios")
     private String benefits;
-    
-    public String getPackageName() {
+
+    public Long getId() {
+        return id;
+    }
+
+    public Pacote getPackageName() {
         return packageName;
     }
 
-    public void setPackageName(String packageName) {
+    public void setPackageName(Pacote packageName) {
         this.packageName = packageName;
     }
 
-    public double getPackageValue() {
+    public BigDecimal getPackageValue() {
         return packageValue;
     }
 
-    public void setPackageValue(double packageValue) {
+    public void setPackageValue(BigDecimal packageValue) {
         this.packageValue = packageValue;
     }
 
@@ -42,5 +49,4 @@ public class MembershipPackage {
         this.benefits = benefits;
     }
 
-    
 }
