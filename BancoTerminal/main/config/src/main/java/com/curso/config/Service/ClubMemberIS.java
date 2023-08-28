@@ -5,11 +5,13 @@ import java.util.List;
 import com.curso.config.Model.ClubMember;
 
 public interface ClubMemberIS {
-    boolean cadastrarAssociado(ClubMember membro);
+    ClubMember cadastrarAssociado(ClubMember membro);
 
     boolean removerAssociado(Long id);
 
     List<ClubMember> ListarAssociados();
+
+    ClubMember findById(Long id);
 
     boolean AtualizarPlano(Long id);/*id referente ao 
     

@@ -15,11 +15,11 @@ public class ClubMemberService implements ClubMemberIS{
     private ClubMemberRepository clubMemberRepository;
 
     @Override
-    public boolean cadastrarAssociado(ClubMember membro) {
+    public ClubMember cadastrarAssociado(ClubMember membro) {
         // TODO Auto-generated method stub
         if(!clubMemberRepository.existsById(membro.getId())){
+            return 
             clubMemberRepository.save(membro);
-            return true;
         }else{
              throw new IllegalArgumentException("the element already exist");
         }
@@ -29,7 +29,7 @@ public class ClubMemberService implements ClubMemberIS{
     @Override
     public boolean removerAssociado(Long id) {
         // TODO Auto-generated method stub
-        if(clubMemberRepository.findById(id)!=null){
+        if(clubMemberRepository.existsById(id)){
             clubMemberRepository.deleteById(id);
             return true;
         }else{
@@ -51,6 +51,20 @@ public class ClubMemberService implements ClubMemberIS{
         }else{
           throw new NoSuchElementException();
         }
+    }
+
+    @Override
+    public ClubMember findById(Long id) {
+        
+        if(clubMemberRepository.existsById(id)){
+           
+            return clubMemberRepository.findById(id).orElseThrow();
+        }
+         else{
+        throw new IllegalArgumentException("Not exist this clubMember");
+         }
+        // TODO Auto-generated method stub
+        
     }
 
     
