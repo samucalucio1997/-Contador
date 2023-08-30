@@ -2,6 +2,7 @@ package com.curso.config.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,6 +66,15 @@ public class ClubMemberService implements ClubMemberIS{
          }
         // TODO Auto-generated method stub
         
+    }
+
+    @Override
+    public Optional<ClubMember> findClubMember(String name) {
+        // TODO Auto-generated method stub
+        List<ClubMember> members = clubMemberRepository.findAll();
+        Optional<ClubMember> membro = members.stream().filter(n -> n.getName().equals(name)).findFirst(); 
+        return membro;
+        // throw new UnsupportedOperationException("Unimplemented method 'findClubMember'");
     }
 
     

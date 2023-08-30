@@ -1,3 +1,38 @@
+
+
+
+
+
+
+
+#application.yml
+spring_profile_activity = prod
+PRO_DB_HOST=containers-us-west-195.railway.app
+PRO_DB_PORT=7233
+PRO_DB_NAME=railway
+PRO_DB_PASSWORD=Hizv15knwXrMRuSSLd76
+PRO_DB_USERNAME=postgres
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 classDiagram
     class ClubMember {
         - name: String
