@@ -14,3 +14,9 @@ spring:
     hibernate:
       ddl-auto: update # ou create-drop, update, etc.
     show-sql: true # Mostra as consultas SQL no console
+  
+  
+  server:
+    port: 8080
+    servlet:
+     context-path: /MemberDefault

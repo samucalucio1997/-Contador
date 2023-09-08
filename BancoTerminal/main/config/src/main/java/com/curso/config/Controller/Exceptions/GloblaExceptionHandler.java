@@ -18,7 +18,7 @@ public class GloblaExceptionHandler {
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<String> handle(NoSuchMethodException NoSuchElementException){
        return new ResponseEntity<>("Resource not found", HttpStatus.NOT_FOUND);
-    }
+    }   
      
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleUnexpected(Exception anyexception){
